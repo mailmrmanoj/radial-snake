@@ -171,9 +171,9 @@ Game.Entities.Snake = class Snake {
 
     // Re-calculate position based on canvas bounds
     if (intersectionPoint.x % width == 0)
-      this.x = (this.x - width).mod(width);
+      this.x = Utils.mod(this.x - width, width);
     if (intersectionPoint.y % height == 0)
-      this.y = (this.y - height).mod(height);
+      this.y = Utils.mod(this.y - height, height);
 
     // Update shapes again based on custom properties
     this.updateShapes(step, width, height, {
